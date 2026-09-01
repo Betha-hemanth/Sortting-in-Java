@@ -209,6 +209,29 @@ Merge Sort is a **divide-and-conquer** sorting algorithm.
 
 It divides the array into smaller parts, sorts them, and then merges them back together.
 
+### Visual Divide and Merge Tree
+
+```mermaid
+flowchart TD
+    A["[5, 3, 8, 1, 2]"] --> B["[5, 3]"]
+    A --> C["[8, 1, 2]"]
+    B --> D["[5]"]
+    B --> E["[3]"]
+    C --> F["[8]"]
+    C --> G["[1, 2]"]
+    G --> H["[1]"]
+    G --> I["[2]"]
+
+    D --> J["[3, 5]"]
+    E --> J
+    H --> K["[1, 2]"]
+    I --> K
+    F --> L["[1, 2, 8]"]
+    K --> L
+    J --> M["[1, 2, 3, 5, 8]"]
+    L --> M
+```
+
 ### Process
 
 ```text
@@ -240,6 +263,19 @@ It divides the array into smaller parts, sorts them, and then merges them back t
 Quick Sort is another **divide-and-conquer** sorting algorithm.
 
 It selects a **pivot** and places smaller elements on one side and larger elements on the other side.
+
+### Visual Partitioning
+
+```mermaid
+flowchart TD
+    A["[5, 3, 8, 1, 2]<br/>pivot = 5"] --> B["Smaller than pivot<br/>[3, 1, 2]"]
+    A --> C["Larger than pivot<br/>[8]"]
+    B --> D["Recursively sort<br/>[1, 2, 3]"]
+    C --> E["Recursively sort<br/>[8]"]
+    D --> F["Combine: [1, 2, 3] + 5 + [8]"]
+    E --> F
+    F --> G["[1, 2, 3, 5, 8]"]
+```
 
 ### Example
 
